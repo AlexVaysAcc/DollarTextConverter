@@ -27,43 +27,28 @@ and invokes Converter.Core (domain logic) -> Returns converted numbers to text b
 
 ### Prerequisites
 *   [.NET 8.0 SDK](https://dotnet.microsoft.com/download)
-*   Windows OS (Required to compile and run the `Converter.Client` WinForms desktop wrapper).
+*   Windows OS (Required to compile and run the `DollarTextConverter.Client` WinForms desktop wrapper).
 *   An IDE like Visual Studio 2022 or higher.
 
 ### 1. Installation & Compilation
 Clone the repository and restore dependencies across the entire solution:
 
-```bash
-# Clone the repository
+```
+1.Clone the repository to your local machine:
 git clone https://github.com/AlexVaysAcc/DollarTextConverter.git
 
-# Restore NuGet packages and compile all projects
-dotnet restore DollarTextConverter.sln
-dotnet build DollarTextConverter.sln --configuration Release
-```
+2. To run the full client-server solution locally, you must run both the server API and the WinForms desktop client.
+  Open the solution in Visual Studio 2022 or higher and set the startup project to `DollarTextConverter.Server` to run the backend API, 
+  and `DollarTextConverter.Client` to run the WinForms desktop client in the solution properties.
+  Solution -> Properties -> Startup Project -> Multiple startup projects -> Set both projects to "Start".
 
-### 2. Running the Test Suites
-Run all automated tests across the Core algorithm library and Server controller layer to ensure stability:
+3. Build the projects to ensure all dependencies are resolved and compiled successfully.
 
-```bash
-# Execute all unit tests simultaneously
-dotnet test DollarTestConverter.sln --logger "console;verbosity=detailed"
-```
+4. Run the solution by starting both the server and client projects. The server will listen for incoming requests, 
+   while the client will provide a user interface for input and display of results.
 
-### 3. Running the Application
-To run the full client-server ecosystem locally, you must run both the server API and the WinForms desktop client.
+5. Switch to the GUI client and enter a dollar amount and select the desired language (English or German) to see the converted text output.
 
-**Terminal 1 (Backend Server API):**
-```bash
-cd DollarTextConverter.Server
-dotnet run --configuration Development
-```
-*The server initializes and listens for incoming client HTTP requests at 'https://localhost:7160/'.*
-
-**Terminal 2 (WinForms Desktop Client):**
-```bash
-cd ../DollarTextConverter.Client
-dotnet run
 ```
 
 ------------------------------------------------------------------------------------------------------------------------------
