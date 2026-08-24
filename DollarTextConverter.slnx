@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Converter.Client/Converter.Client.csproj" />
+    <Project Path="src/Converter.Core/Converter.Core.csproj" />
+    <Project Path="src/Converter.Server/Converter.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Converter.Core.UnitTests/Converter.Core.UnitTests.csproj" Id="ba62c632-2a88-45c6-adcb-d686da7806b0" />
+    <Project Path="tests/Converter.Server.UnitTests/Converter.Server.UnitTests.csproj" Id="dc3eb2ca-179d-4407-b8db-58bed3cad8d9" />
+  </Folder>
+</Solution>
