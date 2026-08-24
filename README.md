@@ -1,6 +1,6 @@
-# Dollar currency to word converter
+# Dollar currency to text converter
 
-A modular, client-server C# application built on .NET 8.0 that converts dollars currency amounts into their written word representations in both English and German. --- ##
+A modular, client-server C# application built on .NET 8.0 Framework that converts dollars currency amounts into their written-word representations in both English and German. --- ##
 
 
 # Project Structure & Architecture
@@ -20,8 +20,8 @@ It implements an `IConverter` interface to achieve dependency inversion, utilizi
 * **`Converter.Server.Tests`**: An API testing layer to validate route handlers, payload models, factory injection, and server error scenarios. 
 
 ### Process Flow
-Converter.Client(WinForms GUI) -> Viladates (First validation) and sends HTTP request to Converter.Server (ASP.NET Core API) -> Validates 
-and invokes Converter.Core (domain logic) -> Returns converted numbers to text back to Converter.Client and display it on GUI.
+Converter.Client(WinForms GUI) -> Viladates (First validation) and sends an HTTP request to Converter.Server (ASP.NET Core API) -> Validates 
+and invokes Converter.Core (domain logic) -> Returns converted numbers as text back to Converter.Client and displays it on the GUI.
 
 ## Build, Run, and Test Guide
 
@@ -34,7 +34,7 @@ and invokes Converter.Core (domain logic) -> Returns converted numbers to text b
 Clone the repository and restore dependencies across the entire solution:
 
 ```
-1.Clone the repository to your local machine:
+1. Clone the repository to your local machine:
 git clone https://github.com/AlexVaysAcc/DollarTextConverter.git
 
 2. To run the full client-server solution locally, you must run both the server API and the WinForms desktop client.
@@ -47,10 +47,9 @@ git clone https://github.com/AlexVaysAcc/DollarTextConverter.git
 4. Run the solution by starting both the server and client projects. The server will listen for incoming requests, 
    while the client will provide a user interface for input and display of results.
 
-5. Switch to the GUI client and enter a dollar amount and select the desired language (English or German) to see the converted text output.
+5. Switch to the GUI client and enter a dollar amount and select the desired language (English or German)and click on 'Conver' button to get the converted text output.
 
 ```
-
 ------------------------------------------------------------------------------------------------------------------------------
 
 ## Design Decisions & Assumptions
@@ -75,5 +74,5 @@ git clone https://github.com/AlexVaysAcc/DollarTextConverter.git
 ##  Limitations & Known Issues
 
 *   **Platform Restriction**: Due to the choice of WinForms for the graphical client user interface, the `Converter.Client` application can only be built and executed on a Windows operating system.
-*   **Maximum Converion Limits**: The dollars to words algorithm is bounded by the max of 99999999 dollars. Submitting strings that overflow this numerical constraint triggers a validation error.
+*   **Maximum Converion Limits**: The dollars-to-words algorithm is bounded by the max of 99999999 dollars. Submitting strings that overflow this numerical constraint triggers a validation error.
 *   **No Automated Connection Retries**: If the local server falls offline during a conversion cycle, the WinForms client logs the socket exception and drops straight to an error notification prompt instead of silently retrying the request queue.
